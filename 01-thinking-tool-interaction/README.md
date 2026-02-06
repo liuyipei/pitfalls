@@ -24,6 +24,22 @@ In under 5 minutes, you should be able to:
    - Thinking on → naive parser fails.
 5. Switch parser strategy to **State-machine parser** and verify stability with thinking on.
 
+## Better testing for this pitfall
+
+Use the parser unit tests to validate behavior across edge cases before manual UI checks:
+
+```bash
+node --test 01-thinking-tool-interaction/parser.test.mjs
+```
+
+This covers:
+
+- thinking-on failure for naive parser,
+- successful extraction for regex/state-machine parsers,
+- malformed tag handling,
+- invalid JSON handling,
+- `<think>` stripping behavior used by the raw output panel.
+
 ## Practical guidance
 
 - Treat `<think>` and narrative text as non-authoritative routing content.
