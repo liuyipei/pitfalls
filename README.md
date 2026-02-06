@@ -191,3 +191,9 @@ A pitfall page is “done” when a user can, in under 5 minutes:
 - apply a concrete fix in their own harness.
 
 That should be the bar for every folder.
+
+---
+
+## Implemented demo
+
+- `04-stop-token-eos-gotchas` — deterministic stop/EOS mismatch simulator with model-aware token picker and validation warnings.
