@@ -1,0 +1,7 @@
+{
+  "name": "pitfalls",
+  "private": true,
+  "scripts": {
+    "test": "node --test 05-system-prompt-handling/logic.test.mjs"
+  }
+}
