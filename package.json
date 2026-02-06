@@ -2,6 +2,17 @@
   "name": "pitfalls",
   "private": true,
   "scripts": {
-    "test": "node --test 05-system-prompt-handling/logic.test.mjs"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test src/pitfallsConfig.test.mjs 01-thinking-tool-interaction/parser.test.mjs 02-tool-call-format-babel/tests/toolParsers.test.mjs 03-multiturn-thinking-context/contextAssembly.test.mjs 04-stop-token-eos-gotchas/simulator.test.mjs 05-system-prompt-handling/logic.test.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
   }
 }

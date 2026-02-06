@@ -197,3 +197,45 @@ That should be the bar for every folder.
 ## Implemented demo
 
 - `04-stop-token-eos-gotchas` — deterministic stop/EOS mismatch simulator with model-aware token picker and validation warnings.
+
+
+## Run in a browser without shell commands
+
+If you want non-technical users to open this directly in a browser, the most practical approach is to publish the built static site to **GitHub Pages** (or Netlify/Vercel static hosting).
+
+This repository now includes a Vite entrypoint (`index.html` + `src/PitfallsBrowserApp.jsx`) that provides one landing page for all five implemented demos and a placeholder for the sixth.
+
+### Local development (for maintainers)
+
+```bash
+npm install
+npm run dev
+```
+
+### Production static build
+
+```bash
+npm run build
+```
+
+Upload the generated `dist/` folder to any static host. End users then only need a URL and a browser.
+
+### Browser-shell regression test coverage
+
+Run `npm test` to validate both domain logic and browser-shell routing helpers (demo IDs, hash resolution, share-link generation).
+
+
+### One-time setup (required for each repo/fork)
+
+1. Go to **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. Push to `main` (or run the workflow manually from the Actions tab).
+
+After that one-time toggle, deployments are automatic via `.github/workflows/deploy.yml`.
+
+### GitHub Pages quick setup
+
+1. Push this repository to GitHub.
+2. Confirm `.github/workflows/deploy.yml` exists (checked in by default).
+3. Wait for the **Deploy to GitHub Pages** workflow to pass.
+4. Share the Pages URL with users.
